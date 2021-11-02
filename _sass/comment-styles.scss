@@ -1,0 +1,143 @@
+// comment styles originally from
+// https://github.com/willymcallister/willymcallister.github.io/blob/fbc7f396fbe80186b1abc63e436ec509190c1b3a/assets/main.scss
+
+//
+// Staticman new comment form
+//
+.comments {
+    input, select, textarea, label, button {
+        font-family: "Times New Roman";
+        font-size: 100%;
+    }
+    fieldset {
+        border: none;
+        padding: 0;
+    }
+
+    // each staticman text field is wrapped in this div
+    .textfield {
+        max-width: 100%;
+        padding: 0.5rem 0;
+    }
+
+    // fields except the comment field get this class too
+    // to keep them a reasonable size
+    .narrowfield {
+        width: 420px;
+    }
+
+    .hp {
+        display: none;
+    }
+
+    textarea {
+        vertical-align: top;
+    }
+
+    .textfield__input {
+        border: 1px solid rgba(0,0,0,.12);
+        padding: 4px 5px;
+        width: 100%;
+    }
+    .notify-me, .g-recaptcha {
+        padding: 0.5rem 0;
+    }
+    button:hover {
+        cursor: pointer;
+    }
+
+    //
+    // Staticman existing comments
+    //
+    .comment__new {
+        padding: 0px 0px 14px 0px;
+    }
+    .comment__admin_tag {
+        font-size: 0.8em;
+        border-style: solid;
+        border-width: 1px;
+        border-radius: 2em;
+        padding: 2px 4px 2px 4px;
+        vertical-align: middle;
+    }
+    .comment__meta {
+        text-align: left;
+    }
+    .comments__existing {
+        padding: 8px 0px 0px 0px;
+    }
+    .comment {
+        padding: 0px 0px 0px 0px;
+        margin-bottom: 1em;
+    }
+    .comment.child {
+        margin-left: 3em;
+    }
+    .comment__reply-link {
+        cursor: pointer;
+    }
+
+}
+
+//
+// Pop-up modal window for Staticman comments
+//
+.show-modal {
+    overflow: hidden;
+    position: relative;
+}
+.show-modal:before {
+    position: absolute;
+    content: '';
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 999;
+    background-color: rgba(255, 255, 255, 0.5);
+}
+
+.show-modal .modal {
+    display: block;
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    width: 330px;
+    top: 50%;
+    left: 50%;
+    margin-left: -150px;
+    margin-top: -150px;
+    min-height: 0;
+    z-index: 9999;
+    box-shadow: 2px 2px 2px 2px rgba(0,0,0,.5);
+    padding: 16px;
+    border-radius: 2px;
+    background: white;
+    overflow: hidden;
+    box-sizing: border-box;
+}
+
+.mdl-card__supporting-text {
+    max-height: 400px;
+    overflow: auto;
+    padding: 16px;
+}
+
+.modal-title {
+    margin-bottom: 0px;
+}
+
+.disabled {
+    input,
+    button,
+    textarea,
+    label {
+        pointer-events: none;
+        cursor: not-allowed;
+        filter: alpha(opacity=65);
+        box-shadow: none;
+        opacity: 0.65;
+    }
+}

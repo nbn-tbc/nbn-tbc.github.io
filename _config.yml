@@ -1,0 +1,16 @@
+markdown: kramdown
+baseurl: /
+permalink: /blog/:title
+defaults:
+  -
+    scope:
+      path: ""
+    values:
+      author: Nhan
+      author_link: /about
+plugins:
+  - jekyll-sitemap
+staticman_url: https://nbn-tbc-staticman-comments.herokuapp.com/v2/entry/nbn-tbc/nbn-tbc.github.io/main/comments
+reCaptcha:
+  siteKey: "6LesDpocAAAAAO-o7dg8_-GPj9nFyJLUQScT_w1N"
+  secret: "pG82+9/R5uwGPckfP50m6hxOwxOjPFd7fa5AnD5Sl5oSYOKyCwQZBzciDkLEqRDtSJPfc0Kvnypckemb9dSYZZ6AVoluUxK7OWKLTZEZ/NZE46Nauh5xAT5jeeQBTRSL9bvczx/Jd6GKl8dcREdxK3KnIrh7/9Zre9IbqE2lEKfVY38lA3CF4mwLSO1sBB7Nc33WxNvy9oN08pUYY+4z3Xd7gVmk1JrF+x3Cf/b+ACTrUM2DYYg1JxNC6vDtIAgXNMOD++25guAo57bnsOa1ecMEzhUk32FEWZuxU2a3qOEZOy0EzawrUS6jBwxdzrOaS50OcU0KG8LD+iV6CSN5qRbSXZLnYR5Tx2UXYvFI+43vdRll4GDLzHEEyBRLTINOOK83t2tLdQIEW3jPS9mAR4PrRjUrrgYM0256cAsbkMGjnBv/RnshKb3SDhPVN/p2fzlrGHzGzg/uIQ5aEKL31B46qWJbyB0vzDsb/rXrLKOqfEDh3Js9ZdDXR7k/WA5aPZeEP4y/+TG2rtmXdf7ukHq8iSQFLpiO2fxCYFKts94ViZtwajBGrmsKYtZskp56XVzM7C/xVeNcBDU3I1QiJzvk1VH7tk/HHHzM88/N+Qp384LPHfIVWjF35LV9HFRZ/XnOhSd9euQTZIEoyErlSOgu9o93BcbLM5VNO00XDXI="

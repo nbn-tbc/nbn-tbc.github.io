@@ -1,0 +1,20 @@
+---
+layout: default
+---
+
+<h2>{{ page.title }}</h2>
+
+<a href="{{ page.author_link }}" style="font-weight: bold">{{ page.author }}</a> • {{ page.date | date_to_long_string }}
+
+<div class="post">
+  {{ content }}
+</div>
+
+{% if page.latex %}
+  {% include mathjax.html %}
+  {% if page.comments != false %}
+    {% include comments.html latex="true" %}
+  {% endif %}
+{% elsif page.comments != false %}
+  {% include comments.html %}
+{% endif %}

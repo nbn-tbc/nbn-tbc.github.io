@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <title>{{ page.title}}</title>
+    <link rel="stylesheet" type="text/css" href="/assets/main.css">
+    <link rel="shortcut icon" type="image/x-icon" href="/resources/favicon.ico?">
+</head>
+  <body>
+    <h1>
+    <a href="/"><img src="/resources/TBCSun.svg" alt="sun logo" style="height:0.9em; width:auto"></a>
+    <a href="/"><span style="text-decoration:underline; color:black">Nhan</span></a>
+    </h1>
+    <nav>
+      <ul>
+        <li><a href="/">Home</a></li>
+        <li><a href="/about">About</a></li>
+        <li><a href="/blog">Blog</a></li>
+      </ul>
+    </nav>
+    <div class="container">
+      {{ content }}
+    </div> <!-- container -->
+    <footer>
+      <ul>
+        <li><a href="mailto:nhan.nguyen.tbc@gmail.com">email</a></li>
+        <li><a href="https://github.com/nbn-tbc">GitHub</a></li>
+      </ul>
+      <p>Site by me, thanks to <a href="https://jekyllrb.com">Jekyll</a>, <a href="https://github.io">GitHub Pages</a>, and <a href="https://github.com/nbn-tbc/nbn-tbc.github.io#readme">others</a>.</p>
+    </footer>
+  </body>
+</html>

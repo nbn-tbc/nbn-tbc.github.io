@@ -1,0 +1,48 @@
+{%- capture article_class %}js-comment comment{% if include.name == page.author %} admin{% endif %}{% if include.is_reply %} child{% endif %}{% endcapture %}
+{% assign comment_id = include.uid | prepend: 'comment-' %}
+
+<article id="{{ comment_id }}" class="{{ article_class }}" uid="{{ include.uid }}">
+  <div class="comment__author">
+    {% if include.name == page.author %}
+      <span class="comment__admin_tag">Author</span>
+    {% endif %}
+    {% if include.url and include.url != "" %}
+      <strong><a href="{{ include.url }}">{{- include.name | strip_html }}</a></strong>
+    {% else %}
+      <strong>{{- include.name | strip_html }}</strong>
+    {% endif %}
+    <span class="comment__date">
+      {%- if include.date -%}
+        •
+        <a href="#{{ comment_id}}" title="Permalink to this comment">
+        {{- include.date | date_to_long_string -}}
+        </a>
+      {%- endif -%}
+    </span>
+  </div>
+
+  <div class="comment__body">
+    {{ include.message | strip_html | markdownify }}
+  </div>
+
+{% if include.is_reply %}
+  </article>
+{% else %}
+    <div class="comment__meta">
+      <a rel="nofollow" class="comment__reply-link" onclick="return addComment.moveForm('{{ comment_id }}', 'respond', '{{ page.slug }}', '{{ include.uid }}')">↪&#xFE0E; Reply to {{ include.name }}</a>
+    </div>
+  </article>
+
+  {%- capture this_uid %}{{ include.uid }}{% endcapture %}
+  {%- assign replies = site.data.comments[page.slug] | where_exp: 'item', 'item.replying_to_uid == this_uid' %}
+  {%- assign replies_date = replies | sort: 'date' %}
+  {% for reply in replies_date %}
+    {%- assign name        = reply.name -%}
+    {%- assign url         = reply.url -%}
+    {%- assign date        = reply.date -%}
+    {%- assign message     = reply.message -%}
+    {%- assign uid         = reply._id -%}
+    {% include comment.html is_reply=true uid=uid name=name url=url date=date message=message %}
+  {% endfor %}
+  <div class="comment_border" style="border-bottom: 1px solid #ccc; margin-bottom: 10px"></div>
+{% endif %}
